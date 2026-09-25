@@ -120,8 +120,8 @@ export default function BrochurePage() {
           Salus
         </Link>
         <div className="brochure-nav__links">
-          <a className="brochure-btn brochure-btn--teal" href="/salus-brochure.pdf" download>
-            Download PDF
+          <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
+            Download
           </a>
           <Link className="brochure-btn brochure-btn--ghost" href="/">
             Sign in
@@ -142,7 +142,7 @@ export default function BrochurePage() {
           </p>
           <div className="brochure-hero__ctas">
             <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
-              Download brochure
+              Download
             </a>
             <Link className="brochure-btn brochure-btn--ghost" href="/signup">
               Register your company
@@ -229,7 +229,7 @@ export default function BrochurePage() {
         </p>
         <div className="brochure-hero__ctas">
           <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
-            Download PDF brochure
+            Download
           </a>
           <Link className="brochure-btn brochure-btn--ghost" href="/">
             Go to login

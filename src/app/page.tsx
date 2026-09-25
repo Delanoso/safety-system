@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -39,7 +40,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className="relative min-h-screen flex items-center justify-center p-6">
+      <Link
+        href="/brochure"
+        className="absolute top-5 left-5 z-10 inline-flex items-center justify-center rounded-xl bg-[var(--gold)] px-5 py-2.5 text-sm font-semibold text-black shadow-lg transition hover:brightness-110"
+      >
+        View
+      </Link>
+
       <div
         className="rounded-2xl p-8 backdrop-blur-xl shadow-xl w-full max-w-md space-y-6"
         style={{
@@ -102,23 +110,6 @@ export default function LoginPage() {
             >
               Register your company
             </button>
-          </p>
-          <p className="text-center">
-            <button
-              type="button"
-              onClick={() => router.push("/brochure")}
-              className="underline hover:text-[var(--foreground)]"
-            >
-              View product brochure
-            </button>
-            {" · "}
-            <a
-              href="/salus-brochure.pdf"
-              download
-              className="underline hover:text-[var(--foreground)]"
-            >
-              Download PDF
-            </a>
           </p>
         </div>
       </div>
