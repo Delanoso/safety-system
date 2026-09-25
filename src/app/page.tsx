@@ -103,6 +103,23 @@ export default function LoginPage() {
               Register your company
             </button>
           </p>
+          <p className="text-center">
+            <button
+              type="button"
+              onClick={() => router.push("/brochure")}
+              className="underline hover:text-[var(--foreground)]"
+            >
+              View product brochure
+            </button>
+            {" · "}
+            <a
+              href="/salus-brochure.pdf"
+              download
+              className="underline hover:text-[var(--foreground)]"
+            >
+              Download PDF
+            </a>
+          </p>
         </div>
       </div>
     </div>

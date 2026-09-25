@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, Home } from "lucide-react";
 
-const AUTH_ONLY = ["/", "/login", "/signup"];
+const AUTH_ONLY = ["/", "/login", "/signup", "/brochure"];
 const HAS_SHELL = ["/dashboard", "/docs"];
 const MODULE_LAYOUT = ["/appointments", "/incidents"];
 const PUBLIC_SIGN = [
