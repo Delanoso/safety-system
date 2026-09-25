@@ -51,7 +51,14 @@
   z-index: 1;
 }
 
+.brochure-shell > *:not(.brochure-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .brochure-nav {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
