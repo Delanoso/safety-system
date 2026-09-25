@@ -1,17 +1,31 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const LEGAL_STORAGE_KEY = "legalNoticeAccepted";
 
+/** Public marketing / auth surfaces should not show the in-app IP gate. */
+const SKIP_PATHS = ["/", "/login", "/signup", "/brochure"];
+
 export function LegalNoticeModal() {
+  const pathname = usePathname() ?? "";
   const [show, setShow] = useState(false);
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
+    if (SKIP_PATHS.includes(pathname) || pathname.startsWith("/brochure")) {
+      setChecking(false);
+      setShow(false);
+      return;
+    }
+
+    let cancelled = false;
     fetch("/api/auth/me")
-      .then((r) => {
-        if (r.ok) {
+      .then((r) => r.json().catch(() => null))
+      .then((data: { user?: unknown } | null) => {
+        if (cancelled) return;
+        if (data?.user) {
           try {
             if (!sessionStorage.getItem(LEGAL_STORAGE_KEY)) {
               setShow(true);
@@ -22,8 +36,14 @@ export function LegalNoticeModal() {
         }
         setChecking(false);
       })
-      .catch(() => setChecking(false));
-  }, []);
+      .catch(() => {
+        if (!cancelled) setChecking(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname]);
 
   const handleAccept = () => {
     try {
