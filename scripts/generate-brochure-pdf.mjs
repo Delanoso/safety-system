@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 /**
  * Generate public/salus-brochure.pdf from scripts/brochure-source.html
- * using headless Chrome.
  */
-import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import puppeteer from "puppeteer-core";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -17,9 +16,6 @@ if (!fs.existsSync(source)) {
   console.error("Missing brochure source:", source);
   process.exit(1);
 }
-
-fs.mkdirSync(path.dirname(out), { recursive: true });
-if (fs.existsSync(out)) fs.unlinkSync(out);
 
 const chromeCandidates = [
   process.env.CHROME_PATH,
@@ -42,23 +38,25 @@ if (!chrome) {
   process.exit(1);
 }
 
-const fileUrl = pathToFileURL(source).href;
-const result = spawnSync(
-  chrome,
-  [
-    "--headless=new",
-    "--disable-gpu",
-    "--no-pdf-header-footer",
-    `--print-to-pdf=${out}`,
-    "--no-margins",
-    fileUrl,
-  ],
-  { encoding: "utf8" }
-);
+fs.mkdirSync(path.dirname(out), { recursive: true });
 
-if (result.status !== 0 || !fs.existsSync(out)) {
-  console.error(result.stderr || result.stdout || "PDF generation failed");
-  process.exit(result.status || 1);
+const browser = await puppeteer.launch({
+  executablePath: chrome,
+  headless: "new",
+  args: ["--no-sandbox", "--disable-gpu", `--user-data-dir=${path.join(root, ".tmp-chrome-brochure")}`],
+});
+
+try {
+  const page = await browser.newPage();
+  await page.goto(pathToFileURL(source).href, { waitUntil: "networkidle0", timeout: 60000 });
+  await page.pdf({
+    path: out,
+    format: "A4",
+    printBackground: true,
+    margin: { top: "0", right: "0", bottom: "0", left: "0" },
+  });
+} finally {
+  await browser.close();
 }
 
 const sizeKb = Math.round(fs.statSync(out).size / 1024);

@@ -4,168 +4,176 @@
   <meta charset="utf-8" />
   <title>Salus — Product Brochure</title>
   <style>
-    @page { size: A4; margin: 14mm 14mm 16mm; }
+    @page { size: A4; margin: 12mm 12mm 14mm; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: #102033;
       background: #fff;
-      font-size: 10.5pt;
-      line-height: 1.45;
+      font-size: 9.8pt;
+      line-height: 1.4;
     }
     h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; margin: 0; }
     .page {
       page-break-after: always;
-      min-height: 260mm;
+      min-height: 262mm;
       position: relative;
     }
     .page:last-child { page-break-after: auto; }
     .cover {
       background: linear-gradient(160deg, #07131f 0%, #0f2436 55%, #134e4a 100%);
       color: #f3f7f8;
-      padding: 28mm 18mm 18mm;
-      border-radius: 0;
-      min-height: 260mm;
+      padding: 26mm 16mm 16mm;
+      min-height: 262mm;
     }
     .cover-brand {
-      font-size: 54pt;
+      font-size: 52pt;
       letter-spacing: -1px;
       line-height: 0.9;
-      margin-bottom: 10mm;
+      margin-bottom: 9mm;
       color: #fff;
     }
     .cover-headline {
-      font-size: 18pt;
+      font-size: 17pt;
       max-width: 22ch;
-      margin-bottom: 6mm;
+      margin-bottom: 5mm;
       font-weight: normal;
     }
     .cover-lede {
-      max-width: 42ch;
+      max-width: 46ch;
       color: rgba(243,247,248,0.78);
-      margin-bottom: 18mm;
-      font-size: 11.5pt;
+      margin-bottom: 16mm;
+      font-size: 11pt;
     }
     .cover-meta {
       position: absolute;
-      left: 18mm;
-      bottom: 18mm;
-      right: 18mm;
+      left: 16mm;
+      bottom: 16mm;
+      right: 16mm;
       display: flex;
       justify-content: space-between;
       gap: 8mm;
-      font-size: 9pt;
+      font-size: 8.5pt;
       color: rgba(243,247,248,0.6);
       border-top: 1px solid rgba(243,247,248,0.2);
-      padding-top: 5mm;
+      padding-top: 4mm;
     }
     .gold { color: #d4af37; }
-    .teal { color: #2ec4b6; }
     .section-title {
-      font-size: 16pt;
-      margin: 0 0 3mm;
+      font-size: 15pt;
+      margin: 0 0 2.5mm;
       color: #07131f;
     }
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      font-size: 8pt;
+      font-size: 7.5pt;
       font-weight: 700;
       color: #1a9e92;
-      margin-bottom: 2mm;
+      margin-bottom: 1.5mm;
     }
     .intro {
       color: #3b4d5e;
-      max-width: 55ch;
-      margin-bottom: 7mm;
+      max-width: 58ch;
+      margin-bottom: 5mm;
     }
     .grid-3 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 5mm;
-      margin-top: 5mm;
+      gap: 4mm;
+      margin-top: 3mm;
     }
     .pillar {
       border-top: 2px solid #2ec4b6;
-      padding-top: 3mm;
+      padding-top: 2.5mm;
     }
-    .pillar h3 { font-size: 11.5pt; margin-bottom: 2mm; }
-    .pillar p { margin: 0; color: #3b4d5e; font-size: 9.5pt; }
-    .modules { margin-top: 4mm; }
+    .pillar h3 { font-size: 10.5pt; margin-bottom: 1.5mm; }
+    .pillar p { margin: 0; color: #3b4d5e; font-size: 8.8pt; }
+    .modules { margin-top: 3mm; }
     .module {
-      display: grid;
-      grid-template-columns: 32mm 1fr;
-      gap: 4mm;
-      padding: 3.5mm 0;
+      padding: 3mm 0;
       border-bottom: 1px solid #d7e2e8;
     }
     .module h3 {
       font-size: 11pt;
       color: #8a6d16;
+      margin-bottom: 1mm;
     }
-    .module p { margin: 0; color: #3b4d5e; font-size: 9.6pt; }
-    .content { padding: 8mm 2mm 0; }
+    .module .lead { margin: 0 0 1.5mm; color: #3b4d5e; font-size: 9pt; }
+    .module ul {
+      margin: 0;
+      padding-left: 4mm;
+      color: #3b4d5e;
+      font-size: 8.6pt;
+    }
+    .module li { margin-bottom: 0.6mm; }
+    .content { padding: 6mm 1mm 0; }
     .steps {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 5mm;
-      margin-top: 5mm;
+      gap: 4mm;
+      margin-top: 4mm;
     }
     .step-num {
       font-family: Georgia, serif;
-      font-size: 18pt;
+      font-size: 16pt;
       color: #2ec4b6;
-      margin-bottom: 2mm;
+      margin-bottom: 1.5mm;
     }
-    .step h3 { font-size: 11pt; margin-bottom: 2mm; }
-    .step p { margin: 0; color: #3b4d5e; font-size: 9.5pt; }
+    .step h3 { font-size: 10.5pt; margin-bottom: 1.5mm; }
+    .step p { margin: 0; color: #3b4d5e; font-size: 8.8pt; }
     ul.points {
       list-style: none;
       padding: 0;
-      margin: 4mm 0 0;
+      margin: 3mm 0 0;
     }
     ul.points li {
-      padding: 2.4mm 0 2.4mm 5mm;
+      padding: 2mm 0 2mm 4.5mm;
       position: relative;
       color: #3b4d5e;
       border-bottom: 1px solid #e4ecef;
-      font-size: 9.8pt;
+      font-size: 9pt;
     }
     ul.points li::before {
       content: "";
-      width: 2.2mm;
-      height: 2.2mm;
+      width: 2mm;
+      height: 2mm;
       border-radius: 50%;
       background: #2ec4b6;
       position: absolute;
       left: 0;
-      top: 4.2mm;
+      top: 3.6mm;
     }
     .close-box {
-      margin-top: 8mm;
-      padding: 6mm;
+      margin-top: 6mm;
+      padding: 5mm;
       background: #07131f;
       color: #f3f7f8;
-      border-radius: 3mm;
+      border-radius: 2.5mm;
     }
     .close-box h2 {
-      font-size: 14pt;
-      margin-bottom: 3mm;
+      font-size: 13pt;
+      margin-bottom: 2.5mm;
       color: #fff;
     }
     .close-box p {
-      margin: 0 0 4mm;
+      margin: 0 0 3mm;
       color: rgba(243,247,248,0.75);
-      font-size: 9.8pt;
+      font-size: 9pt;
     }
     .footer-note {
-      margin-top: 8mm;
-      font-size: 8.5pt;
+      margin-top: 6mm;
+      font-size: 8pt;
       color: #6b7c8a;
       display: flex;
       justify-content: space-between;
       gap: 4mm;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
     }
   </style>
 </head>
@@ -174,8 +182,8 @@
     <div class="cover-brand">Salus</div>
     <h1 class="cover-headline">Health &amp; safety that stays audit-ready.</h1>
     <p class="cover-lede">
-      One platform for South African workplaces to run HSE, close actions,
-      and keep evidence in one place — ready for inspectors, clients, and insurers.
+      One platform for workplaces anywhere to run HSE, close actions,
+      and keep evidence ready for inspectors, clients, and insurers.
     </p>
     <div class="cover-meta">
       <span>Product brochure · Delano Solutions</span>
@@ -187,44 +195,93 @@
     <div class="eyebrow">Why Salus</div>
     <h2 class="section-title">Built for how HSE actually runs</h2>
     <p class="intro">
-      Salus is a multi-company Health &amp; Safety Management System. Replace
-      scattered spreadsheets and paper packs with live registers, ownership,
-      signatures, and branded PDFs your SHE team can defend.
+      Salus is a multi-company Health &amp; Safety Management System from Delano Solutions.
+      It replaces scattered spreadsheets and paper packs with live registers, ownership,
+      WhatsApp e-signatures, and branded PDFs — so compliance is operated daily, not reconstructed under pressure.
     </p>
     <div class="grid-3">
       <article class="pillar">
         <h3>One system, every site</h3>
-        <p>Inspections, incidents, PPE, visitors, permits, and appointments in one workspace.</p>
+        <p>Inspections, incidents, PPE, visitors, permits, appointments, and contractors in one workspace.</p>
       </article>
       <article class="pillar">
-        <h3>Built for SA HSE</h3>
-        <p>OHSA-aligned appointments, SHE structures, legal registers, and audit evidence.</p>
+        <h3>Built for real HSE work</h3>
+        <p>Structured for day-to-day operations — not just document storage.</p>
       </article>
       <article class="pillar">
         <h3>Close the loop</h3>
-        <p>Capture work, collect WhatsApp e-signatures, export PDFs, and track reviews.</p>
+        <p>Capture work, collect signatures, export PDFs, and track reviews to completion.</p>
       </article>
     </div>
 
-    <div style="margin-top:10mm">
+    <div style="margin-top:7mm">
+      <div class="eyebrow">Who it helps</div>
+      <h2 class="section-title">Made for the people who carry HSE</h2>
+      <div class="grid-3">
+        <article class="pillar">
+          <h3>Operations &amp; site managers</h3>
+          <p>Run inspections, permits, visitors, and toolbox talks without losing paperwork between shifts.</p>
+        </article>
+        <article class="pillar">
+          <h3>SHE / HSE officers</h3>
+          <p>Keep appointments, medicals, training, chemicals, and audit evidence current in one place.</p>
+        </article>
+        <article class="pillar">
+          <h3>Directors &amp; owners</h3>
+          <p>See compliance posture across modules and hand over clean PDFs when asked.</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="margin-top:7mm">
       <div class="eyebrow">Inside the platform</div>
       <h2 class="section-title">Everything your safety file needs</h2>
-      <div class="modules">
+      <div class="modules two-col">
         <div class="module">
           <h3>Health &amp; Safety</h3>
-          <p>Training &amp; gap analysis, medicals, PPE stock/issue with e-sign, SHE committee elections &amp; meetings, rule-based risk assessments, hazardous chemicals with SDS, emergency drills.</p>
+          <p class="lead">Keep people competent and protected — then prove it.</p>
+          <ul>
+            <li>Training certificates, expiry tracking, gap analysis</li>
+            <li>Occupational medicals and compliance reporting</li>
+            <li>PPE stock, size lists, issue register, e-sign</li>
+            <li>Safety committee elections, meetings, actions</li>
+            <li>Rule-based risk assessments from HSE templates</li>
+            <li>Hazardous chemicals + SDS uploads</li>
+            <li>Emergency drill logging</li>
+          </ul>
         </div>
         <div class="module">
           <h3>Compliance</h3>
-          <p>SA legal registers, 277-item HSE audit checklist, formal legal appointments (Section 16, SHE reps), daily/weekly/monthly inspections with NCRs, incident investigation &amp; cost analysis.</p>
+          <p class="lead">Turn obligations into live registers your team can work from.</p>
+          <ul>
+            <li>Legal registers and legislation references</li>
+            <li>277-item HSE audit checklist with evidence</li>
+            <li>Formal H&amp;S appointments with dual e-sign</li>
+            <li>Daily / weekly / monthly inspections</li>
+            <li>Non-conformance reports</li>
+            <li>Incident investigation and cost analysis</li>
+          </ul>
         </div>
         <div class="module">
           <h3>Site Safety</h3>
-          <p>Toolbox talks with attendee signatures, induction training, visitor check-in, and permit to work for hot work, height, confined space, and related tasks.</p>
+          <p class="lead">Control who is on site and what high-risk work is allowed.</p>
+          <ul>
+            <li>Toolbox talks with attendee signatures</li>
+            <li>Induction training and expiry tracking</li>
+            <li>Visitor register with host and purpose</li>
+            <li>Permit to work (hot work, height, confined space)</li>
+            <li>Maintenance schedules for plant and vehicles</li>
+          </ul>
         </div>
         <div class="module">
-          <h3>Contractors &amp; Docs</h3>
-          <p>Contractor safety-file portal with token uploads and scored compliance, plus a structured document library for procedures, certificates, and company files.</p>
+          <h3>Contractor Management</h3>
+          <p class="lead">Hold contractors to the same compliance standard.</p>
+          <ul>
+            <li>Safety-file portal with secure upload links</li>
+            <li>Scored compliance across OHS sections</li>
+            <li>Document library for procedures and certificates</li>
+            <li>Clear view of who is current — and who is not</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -237,12 +294,12 @@
       <article class="step">
         <div class="step-num">01</div>
         <h3>Register your company</h3>
-        <p>Create a secure company space, invite users, and control module access per person.</p>
+        <p>Create a secure workspace, invite users, set roles, and control module access.</p>
       </article>
       <article class="step">
         <div class="step-num">02</div>
         <h3>Run the day-to-day</h3>
-        <p>Log inspections, incidents, PPE, visitors, permits, and appointments from one dashboard.</p>
+        <p>Log inspections, incidents, PPE, visitors, permits, appointments, and contractor files.</p>
       </article>
       <article class="step">
         <div class="step-num">03</div>
@@ -251,30 +308,32 @@
       </article>
     </div>
 
-    <div style="margin-top:10mm">
+    <div style="margin-top:8mm">
       <div class="eyebrow">What stands out</div>
       <h2 class="section-title">Details that win the deal</h2>
       <ul class="points">
-        <li><strong>Multi-company tenancy</strong> — each company keeps its own data, branding, and user access.</li>
+        <li><strong>Multi-company tenancy</strong> — each company keeps its own data, logo, brand colour, and user access.</li>
+        <li><strong>Module-level access control</strong> — admins decide exactly which modules each user can open.</li>
         <li><strong>WhatsApp e-signatures</strong> — appointments, incidents, PPE issues, and toolbox talks signed remotely.</li>
-        <li><strong>Branded PDF exports</strong> — company logo and name on the records auditors and clients expect.</li>
+        <li><strong>Branded PDF exports</strong> — company name and logo on the records auditors and clients expect.</li>
         <li><strong>Rule-based risk drafts</strong> — Salus builds assessment drafts from built-in HSE templates.</li>
         <li><strong>Contractor portal</strong> — share a secure upload link and score safety-file completeness.</li>
+        <li><strong>Works in any country</strong> — configure structure, appointments, registers, and documents for local HSE requirements.</li>
       </ul>
     </div>
 
     <div class="close-box">
       <h2>Show Salus. Leave the brochure behind.</h2>
       <p>
-        Use the live brochure page for walkthroughs, then share this PDF with SHE committees
-        and management. Sign in or register a company from your Salus login page.
+        Use the live brochure page for walkthroughs, then share this PDF with safety committees
+        and management. Open Brochure from your Salus login page, or register a company to get started.
       </p>
-      <div style="font-size:9pt;color:#d4af37">salus-brochure.pdf · Product of Delano Solutions</div>
+      <div style="font-size:8.5pt;color:#d4af37">salus-brochure.pdf · Product of Delano Solutions</div>
     </div>
 
     <div class="footer-note">
       <span>Salus Health &amp; Safety Management System</span>
-      <span>Confidential sales material</span>
+      <span>For workplaces worldwide</span>
     </div>
   </section>
 </body>

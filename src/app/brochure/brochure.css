@@ -326,9 +326,35 @@
   font-size: 0.98rem;
 }
 
-.brochure-module strong {
-  color: var(--br-paper);
-  font-weight: 600;
+.brochure-module--rich {
+  align-items: start;
+}
+
+.brochure-module__list {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.brochure-module__list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--br-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.brochure-module__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--br-teal);
 }
 
 .brochure-steps {

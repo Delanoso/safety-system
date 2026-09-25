@@ -45,7 +45,7 @@ export default function LoginPage() {
         href="/brochure"
         className="absolute top-5 left-5 z-10 inline-flex items-center justify-center rounded-xl bg-[var(--gold)] px-5 py-2.5 text-sm font-semibold text-black shadow-lg transition hover:brightness-110"
       >
-        View
+        Brochure
       </Link>
 
       <div
