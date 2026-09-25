@@ -56,9 +56,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem clamp(1.25rem, 4vw, 3rem);
+  padding: 1rem clamp(1.25rem, 4vw, 3rem);
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 0.75rem auto 0;
+  border: 1px solid rgba(243, 247, 248, 0.12);
+  border-radius: 999px;
+  background: rgba(7, 19, 31, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .brochure-nav__brand {
