@@ -279,6 +279,21 @@ export default function BrochurePage() {
             </article>
           ))}
         </div>
+
+        <div className="brochure-buy">
+          <span className="brochure-section__eyebrow">Or buy your own copy</span>
+          <h3 className="brochure-buy__title">
+            Buy a copy of the system for your own company
+          </h3>
+          <p className="brochure-buy__text">
+            Prefer a dedicated Salus deployment for your organisation? Contact Delano
+            Solutions to purchase and set up your own copy.
+          </p>
+          <p className="brochure-buy__contact">
+            <span>Delano Solutions</span>
+            <a href="mailto:Erich@delanosolutions.co.za">Erich@delanosolutions.co.za</a>
+          </p>
+        </div>
       </section>
 
       <section className="brochure-section brochure-reveal" id="edge">
@@ -304,6 +319,11 @@ export default function BrochurePage() {
         <p>
           Open this page on any device for a live walkthrough, then download the PDF
           so prospects can share it with their safety committee or management team.
+          To buy a dedicated copy for your company, contact Delano Solutions at{" "}
+          <a href="mailto:Erich@delanosolutions.co.za" style={{ color: "#b8fff7" }}>
+            Erich@delanosolutions.co.za
+          </a>
+          .
         </p>
         <div className="brochure-hero__ctas">
           <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
