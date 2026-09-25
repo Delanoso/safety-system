@@ -17,7 +17,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "Salus — Health & Safety Management System",
   description:
-    "Salus is a multi-company health and safety platform for South African workplaces: inspections, incidents, PPE, appointments, contractors, and compliance — with WhatsApp e-signatures and branded PDFs.",
+    "Salus is a multi-company health and safety platform for workplaces worldwide: inspections, incidents, PPE, appointments, contractors, and compliance — with WhatsApp e-signatures and branded PDFs.",
 };
 
 export default function BrochureLayout({
