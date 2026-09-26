@@ -314,30 +314,6 @@ export default function BrochurePage() {
         </ul>
       </section>
 
-      <section className="brochure-close brochure-reveal" id="next">
-        <h2>Show Salus. Leave the brochure behind.</h2>
-        <p>
-          Open this page on any device for a live walkthrough, then download the PDF
-          so prospects can share it with their safety committee or management team.
-          To buy a dedicated copy for your company, contact Delano Solutions at{" "}
-          <a href="mailto:Erich@delanosolutions.co.za" style={{ color: "#b8fff7" }}>
-            Erich@delanosolutions.co.za
-          </a>
-          .
-        </p>
-        <div className="brochure-hero__ctas">
-          <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
-            Download
-          </a>
-          <Link className="brochure-btn brochure-btn--ghost" href="/">
-            Go to login
-          </Link>
-          <Link className="brochure-btn brochure-btn--teal" href="/signup">
-            Start company registration
-          </Link>
-        </div>
-      </section>
-
       <footer className="brochure-footer">
         <span>Salus · Delano Solutions · Online Safety Solutions</span>
         <span>
