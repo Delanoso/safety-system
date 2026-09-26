@@ -4,6 +4,19 @@ import { withSentryConfig } from "@sentry/nextjs";
 const nextConfig: NextConfig = {
   output: "standalone",
   serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
+  async headers() {
+    return [
+      {
+        source: "/salus-brochure.pdf",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withSentryConfig(nextConfig, {

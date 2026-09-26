@@ -3,6 +3,9 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
+/** Bump when regenerating the PDF so browsers/CDN fetch a fresh file. */
+const BROCHURE_PDF = "/salus-brochure.pdf?v=20260926";
+
 const MODULES = [
   {
     group: "Health & Safety",
@@ -173,7 +176,7 @@ export default function BrochurePage() {
           Salus
         </Link>
         <div className="brochure-nav__links">
-          <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
+          <a className="brochure-btn brochure-btn--primary" href={BROCHURE_PDF} download="salus-brochure.pdf">
             Download
           </a>
           <Link className="brochure-btn brochure-btn--ghost" href="/">
@@ -194,7 +197,7 @@ export default function BrochurePage() {
             keep evidence ready for inspectors, clients, and insurers.
           </p>
           <div className="brochure-hero__ctas">
-            <a className="brochure-btn brochure-btn--primary" href="/salus-brochure.pdf" download>
+            <a className="brochure-btn brochure-btn--primary" href={BROCHURE_PDF} download="salus-brochure.pdf">
               Download
             </a>
             <Link className="brochure-btn brochure-btn--ghost" href="/signup">
@@ -317,7 +320,7 @@ export default function BrochurePage() {
       <footer className="brochure-footer">
         <span>Salus · Delano Solutions · Online Safety Solutions</span>
         <span>
-          <a href="/salus-brochure.pdf" download>
+          <a href={BROCHURE_PDF} download="salus-brochure.pdf">
             salus-brochure.pdf
           </a>
           {" · "}
